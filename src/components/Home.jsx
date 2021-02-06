@@ -1,0 +1,74 @@
+import React, { useEffect } from 'react';
+import { Link } from "react-router-dom";
+
+function Home(props) {
+  useEffect(() => {
+    props.getAnnunci();
+  }, []);
+
+  const rows = props.annunci.map((row, index) => { 
+    var i = row;
+    var ind = index;
+
+    var link = '/' + i.titolo;
+    var badge = (i.categoria === 'Cerco') ? 'badge bg-primary' : 'badge bg-danger';
+
+    return (
+      <tr key={ind}>
+        <th className="titolo" scope="row"><Link to={link} className="titolo" scope="row">{i.titolo}</Link></th>
+        <td><span className={badge}>{i.categoria}</span></td>
+        <td>{i.nome}</td>
+        <td>{i.data}</td>
+      </tr>
+    )
+  });
+
+  const table = () => {
+    if (props.annunci.length !== 0) {
+      return (
+        <>
+          <table className="table">
+            <thead>
+              <tr>
+                <th scope="col">TITOLO</th>
+                <th scope="col">CATEGORIA</th>
+                <th scope="col">NOME</th>
+                <th scope="col">DATA</th>
+              </tr>
+            </thead>
+            <tbody>
+              {rows}
+            </tbody>
+          </table>
+        </>
+      )
+    } else {
+      return (
+        <div>
+          <hr/>
+          <h3>Tutto tace.</h3>
+          <small className="text-muted">Aggingi un annuncio per iniziare</small>
+        </div>
+      )
+    }
+  }
+
+  return (
+    <div className="container">
+      <h1 className="position-relative">
+        Annunci
+        <Link to="/new">
+          <button className="btn btn-outline-light destra">Nuovo</button>
+        </Link>
+      </h1>
+      <small className="text-muted">Ecco gli annunci attualmente attivi.</small>
+
+      <br /><br />
+
+      {table()}
+
+    </div>
+  );
+}
+
+export default Home;

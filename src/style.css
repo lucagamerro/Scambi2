@@ -1,0 +1,72 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: #000000;
+  /*
+background-color: #FBAB7E;
+background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+*/
+  color: white;
+}
+
+.titolo {
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+}
+.titolo:hover {
+  text-decoration: underline;
+  color: white;
+}
+
+.destra {
+  position: absolute;
+  right: 0px;
+}
+
+.pass-input {
+  background-color: #000000;
+  color: white;
+}
+.pass-input:focus {
+  background-color: #000000;
+  color: white;
+  box-shadow: none;
+  border-color: white;
+}
+
+img {
+  width: 30%;
+  height: auto;
+  border-radius: 28px;
+  border: none;
+  box-shadow: 0px 0px 18px #0a57ca85;
+
+  margin-left: 50px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+::-moz-selection {
+  color: #000000;
+  background: white;
+}
+
+::selection {
+  color: #000000;
+  background: white;
+}
+
+textarea {
+  resize: none;
+  overflow: auto;
+}
