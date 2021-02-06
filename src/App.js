@@ -42,7 +42,7 @@ function App() {
 
         </Switch>
         <small className="fixed-bottom text-muted" style={{marginLeft: '10px'}}>
-            Created by <a href="https://github.com/lucagamerro" target="_blank" rel="noreferrer">@lucagamerro</a>.
+            Created by <a href="https://github.com/lucagamerro/Scambi2" target="_blank" rel="noreferrer">@lucagamerro</a>.
         </small>
       </Router>
     </div>
