@@ -1,4 +1,4 @@
-# Scambi - gasquemais
+# Scambi 2.0
 
 ## Introduzione
 Il sito **Scambi** è una piattaforma che permatte di gestire facilmente le **offerte e le richieste** in tutti i campi all'interno del GasQuemais. 
