@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-require('dotenv').config()
 
 function Login(props) {
   const [password, setPassword] = useState('');
