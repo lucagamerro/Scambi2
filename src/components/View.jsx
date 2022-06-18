@@ -11,7 +11,7 @@ function View(props) {
     props.annunci.filter(obj => {
         if (obj.titolo === id) {
             annuncio = obj;
-        }
+        } 
     });
 
     if (annuncio === undefined || props.auth === false) {
@@ -33,7 +33,7 @@ function View(props) {
         var photos = [];
 
         for (let i = 0; i < annuncio.foto.length; i++) {
-            photos.push(<img key={i} src={annuncio.foto[i]} alt="Website couldn't upload the photo" />);
+            photos.push(<img key={i} src={annuncio.foto[i]} alt="img" />);
         }
 
         return(photos);
@@ -41,6 +41,12 @@ function View(props) {
 
     const deleteDoc = async () => {
         if (window.confirm("Sei sicuro di voler eliminare l'annuncio?") && props.auth === true) {
+            const storageRef = firebase.storage();
+            for (let i = 0; i < annuncio.foto.length; i++) {
+                var tmpFotoRef = storageRef.refFromURL(annuncio.foto[i])
+                tmpFotoRef.delete()
+            }
+
             const ref = await firestoreRef.where('titolo', '==', annuncio.titolo).get();
             var el = ref.docs[0].id;
             await firestoreRef.doc(el).delete();
@@ -69,9 +75,9 @@ function View(props) {
 
             <br/><br/>
 
-            <button className="btn btn-outline-light ms-2" onClick={() => window.open(messaggio,'_blank')}>Manda un messaggio</button>
-            <button className="btn btn-outline-light ms-2" onClick={() => window.open(email)}>Contatta via mail</button>
-            <button className="btn btn-outline-light ms-2" onClick={deleteDoc}>Elimina l'annuncio</button>
+            <button className="btn btn-outline-dark ms-2" onClick={() => window.open(messaggio,'_blank')}>Manda un messaggio</button>
+            <button className="btn btn-outline-dark ms-2" onClick={() => window.open(email)}>Contatta via mail</button>
+            <button className="btn btn-outline-dark ms-2" onClick={deleteDoc}>Elimina l'annuncio</button>
             <div className='delete-button' onClick={deleteDoc} />
 
             <hr/>

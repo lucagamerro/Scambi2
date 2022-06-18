@@ -12,7 +12,7 @@ function Home(props) {
     var aDate = new Date(aComps[2], aComps[1], aComps[0]);
     var bDate = new Date(bComps[2], bComps[1], bComps[0]);
     return bDate.getTime() - aDate.getTime();
-});
+  });
 
   const rows = props.annunci.map((row, index) => { 
     var i = row;

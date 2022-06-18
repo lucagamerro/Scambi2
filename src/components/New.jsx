@@ -66,12 +66,12 @@ function About(props) {
     (categoria === '• Richiedo qualcosa') ? categoriaTMP = 'Cerco' : categoriaTMP = 'Offro';
 
     const link = 'scambi.surge.sh/';
-    emailjs.send('service_phxn0gj', 'template_shxlnrm',{
-      titolo: titolo,
-      testo: testo,
-      link: link,
-      to: 'gasquemais@googlegroups.com',
-    }, 'user_STmZslqigOUQfVm5dxubE');
+    //emailjs.send('service_phxn0gj', 'template_shxlnrm',{
+    //  titolo: titolo,
+    //  testo: testo,
+    //  link: link,
+    //  to: 'gasquemais@googlegroups.com',
+    //}, 'user_STmZslqigOUQfVm5dxubE');
 
     await firestoreRef.add({
       categoria: categoriaTMP,
