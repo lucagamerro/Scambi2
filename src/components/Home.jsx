@@ -6,6 +6,14 @@ function Home(props) {
     props.getAnnunci();
   }, []);
 
+  props.annunci.sort(function(a,b) {
+    var aComps = a.data.split("/");
+    var bComps = b.data.split("/");
+    var aDate = new Date(aComps[2], aComps[1], aComps[0]);
+    var bDate = new Date(bComps[2], bComps[1], bComps[0]);
+    return bDate.getTime() - aDate.getTime();
+});
+
   const rows = props.annunci.map((row, index) => { 
     var i = row;
     var ind = index;
@@ -58,7 +66,7 @@ function Home(props) {
       <h1 className="position-relative">
         Annunci
         <Link to="/new">
-          <button className="btn btn-outline-light destra">Nuovo</button>
+          <button className="btn btn-outline-dark destra">Nuovo</button>
         </Link>
       </h1>
       <small className="text-muted">Ecco gli annunci attualmente attivi.</small>

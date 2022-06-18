@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 
 function Login(props) {
   const [password, setPassword] = useState('');
-  const [buttonClass, setButtonClass] = useState('btn btn-outline-light');
+  const [buttonClass, setButtonClass] = useState('btn btn-outline-dark');
 
   const login = (e) => {
     e.preventDefault();
 
-    if (password === password) {
+    if (password === 'rivoli') { //!!!
       setButtonClass('btn btn-primary');
       props.setAuth(true);
     } else {

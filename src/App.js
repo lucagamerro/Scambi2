@@ -11,7 +11,7 @@ import './style.css';
 
 
 function App() {
-  const ref = firebase.firestore().collection('annunci').orderBy('data');
+  const ref = firebase.firestore().collection('annunci');
 
   const [auth, setAuth] = useState(false);
   const [annunci, setAnnunci] = useState([]);
@@ -41,8 +41,9 @@ function App() {
           </Route>
 
         </Switch>
+
         <small className="fixed-bottom text-muted" style={{marginLeft: '10px'}}>
-            Created by <a href="https://github.com/lucagamerro/Scambi2" target="_blank" rel="noreferrer">@lucagamerro</a>.
+        <a href="https://scarica-scambi.surge.sh/" target="_blanck">Scarica l'app</a> • created by <a href="https://github.com/lucagamerro/Scambi2" target="_blank" rel="noreferrer">@lucagamerro</a>
         </small>
       </Router>
     </div>

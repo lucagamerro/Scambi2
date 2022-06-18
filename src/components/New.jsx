@@ -149,14 +149,14 @@ function About(props) {
           <div className="form-group">
             <label htmlFor="exampleInputFile">Carica una foto: </label>
             <br/>
-            <input type="file" onChange={uploadFile} className="fileToUpload pass-input" id="fileToUpload" aria-describedby="fileHelp" name="fileToUpload" multiple />
+            <input type="file" onChange={uploadFile} className="form-control fileToUpload pass-input mt-2" id="fileToUpload" aria-describedby="fileHelp" name="fileToUpload" multiple />
             <br/>
             {status ? loader() : <br/>}
           </div>
 
           <br/>
 
-          <button type="submit" className="btn btn-outline-light" value="Invia" onClick={handelSubmit}>Invia</button>
+          <button type="submit" className="btn btn-outline-dark" value="Invia" onClick={handelSubmit}>Invia</button>
           
           <br/><br/><br/><br/><br/><br/>
       </form>

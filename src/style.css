@@ -2,22 +2,18 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  background-color: #000000;
-  /*
-background-color: #FBAB7E;
-background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
-*/
-  color: white;
+  background-color: white;
+  color: #000000;
 }
 
 .titolo {
   cursor: pointer;
   text-decoration: none;
-  color: white;
+  color: #000000;
 }
 .titolo:hover {
   text-decoration: underline;
-  color: white;
+  color: #000000;
 }
 
 .destra {
@@ -26,14 +22,14 @@ background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
 }
 
 .pass-input {
-  background-color: #000000;
-  color: white;
+  background-color:white;
+  color: #000000;
 }
 .pass-input:focus {
-  background-color: #000000;
-  color: white;
+  background-color: white;
+  color: #000000;
   box-shadow: none;
-  border-color: white;
+  border-color: #000000;
 }
 
 img {
@@ -42,7 +38,6 @@ img {
   border-radius: 28px;
   border: none;
   box-shadow: 0px 0px 18px #0a57ca85;
-
   margin-left: 50px;
 }
 
@@ -57,13 +52,13 @@ input[type="number"] {
 }
 
 ::-moz-selection {
-  color: #000000;
-  background: white;
+  color: white;
+  background: #000000;
 }
 
 ::selection {
-  color: #000000;
-  background: white;
+  color: white;
+  background: #000000;
 }
 
 textarea {
