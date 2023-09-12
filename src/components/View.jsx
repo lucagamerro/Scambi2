@@ -33,7 +33,7 @@ function View(props) {
         var photos = [];
 
         for (let i = 0; i < annuncio.foto.length; i++) {
-            photos.push(<img key={i} src={annuncio.foto[i]} alt="img" />);
+            photos.push(<img className="foto" key={i} src={annuncio.foto[i]} alt="img" />);
         }
 
         return(photos);

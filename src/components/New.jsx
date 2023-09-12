@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Link, useHistory } from "react-router-dom";
+import { Link, useHistory } from 'react-router-dom';
 import firebase from '../firebase';
 import emailjs from 'emailjs-com';
+import { Container } from 'react-bootstrap';
 
 function About(props) {
   const firestoreRef = firebase.firestore().collection('annunci');
@@ -63,10 +64,15 @@ function About(props) {
   const handelSubmit = async (e) => {
     e.preventDefault();
 
+    if (titolo === '' || testo === '' || telefono === '' || nome === '') {
+      alert('Compila tutti i campi per continuare.');
+      return;
+    }
+
     (categoria === '• Richiedo qualcosa') ? categoriaTMP = 'Cerco' : categoriaTMP = 'Offro';
 
     const link = 'scambi.surge.sh/';
-    emailjs.send('service_phxn0gj', 'template_shxlnrm',{
+    emailjs.send('service_pv13axt', 'template_shxlnrm',{
       titolo: titolo,
       testo: testo,
       link: link,
@@ -94,7 +100,7 @@ function About(props) {
   }
 
   return (
-    <div className="container">
+    <Container fluid>
       <h1>
         Crea un nuovo annuncio
       </h1>
@@ -105,7 +111,7 @@ function About(props) {
       <br/>
 
       <div className="jumbotron">
-      <form action="inviato.php" method="POST" encType="multipart/form-data">
+      <form encType="multipart/form-data">
 
           <div className="form-group">
             <select value={categoria} onChange={(e) => setCategoria(e.target.value)} multiple="" className="form-control pass-input" id="exampleSelect2" name="categoria" row="2">
@@ -117,7 +123,7 @@ function About(props) {
           <br/>
 
           <div className="form-group">
-            <input value={titolo} onChange={(e) => setTitolo(e.target.value)} type="text" className="form-control pass-input" placeholder="Titolo annuncio" name="titolo" />
+            <input value={titolo} onChange={(e) => setTitolo(e.target.value)} type="text" className="form-control pass-input" placeholder="Titolo annuncio" name="titolo" autoFocus />
           </div>
 
           <br/>
@@ -158,10 +164,10 @@ function About(props) {
 
           <button type="submit" className="btn btn-outline-dark" value="Invia" onClick={handelSubmit}>Invia</button>
           
-          <br/><br/><br/><br/><br/><br/>
+          <br/><br/><br/>
       </form>
       </div>
-    </div>
+    </Container>
   );
 }
 

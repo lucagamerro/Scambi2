@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
+import { Container, Table } from 'react-bootstrap';
 
 function Home(props) {
   useEffect(() => {
@@ -34,48 +35,46 @@ function Home(props) {
   const table = () => {
     if (props.annunci.length !== 0) {
       return (
-        <>
-          <table className="table">
-            <thead>
-              <tr>
-                <th scope="col">TITOLO</th>
-                <th scope="col">CATEGORIA</th>
-                <th scope="col">NOME</th>
-                <th scope="col">DATA</th>
-              </tr>
-            </thead>
-            <tbody>
-              {rows}
-            </tbody>
-          </table>
-        </>
+        <Table responsive>
+          <thead>
+            <tr>
+              <th scope="col">TITOLO</th>
+              <th scope="col">CATEGORIA</th>
+              <th scope="col">NOME</th>
+              <th scope="col">DATA</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows}
+          </tbody>
+        </Table>
       )
     } else {
       return (
         <div>
           <hr/>
-          <h3>Tutto tace.</h3>
-          <small className="text-muted">Aggingi un annuncio per iniziare</small>
+          <h3>Tutto tace</h3>
+          <small className="text-muted">Aggingi un annuncio per iniziare.</small>
         </div>
       )
     }
   }
 
   return (
-    <div className="container">
+    <Container fluid>
       <h1 className="position-relative">
         Annunci
-        <Link to="/new">
+        <Link to="/nuovo">
           <button className="btn btn-outline-dark destra">Nuovo</button>
         </Link>
       </h1>
       <small className="text-muted">Ecco gli annunci attualmente attivi.</small>
 
-      <br /><br />
+      <br/><br/>
 
       {table()}
 
-    </div>
+    </Container>
   );
 }
 

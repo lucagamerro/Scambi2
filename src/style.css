@@ -16,6 +16,10 @@
   color: #000000;
 }
 
+.pointer {
+  cursor: pointer;
+}
+
 .destra {
   position: absolute;
   right: 0px;
@@ -32,7 +36,7 @@
   border-color: #000000;
 }
 
-img {
+.foto {
   width: 30%;
   height: auto;
   border-radius: 28px;
